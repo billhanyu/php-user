@@ -16,7 +16,7 @@
 			$newuser = "INSERT INTO auth (id, username, passwordhash) VALUES (NULL, '$newusername', '$newpassword')";
 			mysqli_query($db, $newuser);
 		
-			$_SESSION['login_user'] = $myusername;
+			$_SESSION['login_user'] = $newusername;
 			echo "heading";
         	header("location: welcome.php");
 		}
