@@ -3,13 +3,21 @@
 ?>
 <html>
    
-   <head>
-      <title>Welcome </title>
-   </head>
+   	<head>
+    	<title>Welcome </title>
+   	</head>
    
-   <body>
-      <h1>Welcome <?php echo $login_session; ?></h1> 
-      <h2><a href = "logout.php">Sign Out</a></h2>
-   </body>
+   	<body>
+   		<div>
+   			<p>You are logged in as <?php echo $login_session; ?></p>
+   			<a href = "logout.php">Sign Out</a>
+   		</div>
+   		<div>
+   			<a href = "createPost.php">New Post</a>
+   		</div>
+   		<div>
+   			List
+   		</div>
+   	</body>
    
 </html>
