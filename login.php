@@ -1,6 +1,7 @@
 <?php
 	include("config.php");
 	session_start();
+	$fromArticle = -1;
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$myusername = mysqli_real_escape_string($db, $_POST['username']);
@@ -10,9 +11,14 @@
 		$count = mysqli_num_rows($result);
 
 		if ($count == 1) {
-			//session_register("myusername");
 			$_SESSION['login_user'] = $myusername;
-			header("location: welcome.php");
+			$fromArticle = $_GET['postId'];
+			if ($fromArticle) {
+				header("location: article.php?postId=" . $fromArticle);
+			}
+			else {
+				header("location: welcome.php");
+			}
 		}
 		else {
 			$error = "Your Login Name or Password is invalid";

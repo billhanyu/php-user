@@ -1,0 +1,32 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+.header {
+	background-color: #F3F2ED;
+}
+.content {
+	padding-left: 10%;
+	padding-right: 30%;
+}
+h1 {
+	height: 80px;
+	line-height: 80px;
+	margin: 0;
+	text-align: center;
+}
+h2 {
+	font-size: 150%;
+	padding-left: 5%;
+}
+p {
+	line-height: 2em;
+}
+.footer {
+	text-align: center;
+}
+#functions {
+	padding-top: 20px;
+	padding-right: 10%;
+	float: right;
+}	
