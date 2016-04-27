@@ -20,13 +20,13 @@
 		<div class = "header">
 			<h1><a href = 'welcome.php'>Bill Yu</a></h1>
 		</div>
-		<div class = "content">
+		<div class = "center">
 			<form action = "" method = "post">
-      	<label>Topic: </label>
-      	<input type = "text" name = "topic" class = "line"/><br /><br />
-        <label>Content: </label><br>
-        <input type = "text" name = "content" class = "box" /><br/><br />
-        <input type = "submit" value = " Post "/><br />
+      	<h2>Topic: </h2><br>
+      	<input type = "text" name = "topic" class = "topicBox"/><br /><br />
+        <h2>Content: </h2><br>
+        <textarea name = "content" class = "contentBox" rows = "20"></textarea><br/><br />
+        <input id = "postButton" type = "submit" value = " Post "/><br />
       </form>
 		</div>
 		<div class = "footer">

@@ -2,6 +2,9 @@ body {
 	margin: 0;
 	padding: 0;
 }
+body, textarea, input {
+	font-size: 16px;
+}
 .header {
 	background-color: #F3F2ED;
 }
@@ -15,9 +18,13 @@ body {
 	text-align: left;
 	width: 28%;
 }
+.center {
+	width: 62%;
+	margin: 0 auto;
+}
 h1 {
-	height: 80px;
-	line-height: 80px;
+	height: 120px;
+	line-height: 120px;
 	margin: 0;
 	text-align: center;
 }
@@ -31,4 +38,20 @@ p {
 .footer {
 	text-align: center;
 	clear: both;
+}
+textarea {
+	resize: none;
+	overflow: auto;
+}
+.topicBox {
+	height: 2em;
+	width: 100%;
+}
+.contentBox {
+	width: 100%;
+}
+#postButton {
+	width: 100px;
+	height: 40px;
+	float: right;
 }
