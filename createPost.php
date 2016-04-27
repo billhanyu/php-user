@@ -13,43 +13,24 @@
 <html>
 	<head>
 		<title>New Post</title>
-		<style type = "text/css">
-         body {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 14px;
-         }
-         
-         label {
-            font-weight: bold;
-            width: 100px;
-            font-size: 14px;
-         }
-
-         .line {
-         	width: 200px;
-         	border: #666666 solid 1px;
-         }
-         
-         .box {
-         	text-align: left;
-    		padding-left:0;
-    		padding-top:0;
-    		padding-bottom:0.4em;
-    		padding-right: 0.4em;
-         	height: 200px;
-         	width: 200px;
-            border: #666666 solid 1px;
-         }
-      </style>
+		<link rel	= "stylesheet" type = "text/css" href = "styles.css">
 	</head>
 
 	<body>
-		<form action = "" method = "post">
-            <label>Topic: </label>
-            <input type = "text" name = "topic" class = "line"/><br /><br />
-            <label>Content: </label><br>
-            <input type = "text" name = "content" class = "box" /><br/><br />
-            <input type = "submit" value = " Post "/><br />
-        </form>
+		<div class = "header">
+			<h1><a href = 'welcome.php'>Bill Yu</a></h1>
+		</div>
+		<div class = "content">
+			<form action = "" method = "post">
+      	<label>Topic: </label>
+      	<input type = "text" name = "topic" class = "line"/><br /><br />
+        <label>Content: </label><br>
+        <input type = "text" name = "content" class = "box" /><br/><br />
+        <input type = "submit" value = " Post "/><br />
+      </form>
+		</div>
+		<div class = "footer">
+			Bill Yu
+		</div>
 	</body>
 </html>

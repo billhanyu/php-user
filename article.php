@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-include('config.php');
+include('session.php');
 ?>
 <html>
 <meta charset="utf-8">
@@ -26,12 +26,24 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 <body>
 <div>
 	<div class = "header">
-		<?php
-			echo "<h1><a href = 'welcome.php'>Bill Yu</a></h1>";
-			echo "<a id = 'functions' href = 'login.php?postId="
+		<h1><a href = 'welcome.php'>Bill Yu</a></h1>
+	</div>
+	<div class = "aside">
+		<div>
+			<?php
+				if (!isset($_SESSION['login_user'])) {
+					echo "<p><a href = 'login.php?postId="
 						. $articleId
-						. "'>Log In</a>";
-		?>
+						. "'>Log In</a></p>";
+				}
+				else {
+					echo "<p><a href = 'logout.php'>Log Out</a></p>";
+					echo "<p><a href = 'edit.php?postId="
+						. $articleId
+						. "'>Edit</a></p>";
+				} 
+			?>
+		</div>
 	</div>
 	<div class = "content">
 		<?php
@@ -39,7 +51,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 			echo "<p>" . $article['content'] . "</p>";
 		?>
 	</div>
-</div>
 <div class = "footer">
 	Bill Yu	
 </div>

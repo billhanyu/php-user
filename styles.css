@@ -7,7 +7,13 @@ body {
 }
 .content {
 	padding-left: 10%;
-	padding-right: 30%;
+	float: left;
+	width: 62%;
+}
+.aside {
+	float: right;
+	text-align: left;
+	width: 28%;
 }
 h1 {
 	height: 80px;
@@ -24,9 +30,5 @@ p {
 }
 .footer {
 	text-align: center;
+	clear: both;
 }
-#functions {
-	padding-top: 20px;
-	padding-right: 10%;
-	float: right;
-}	
