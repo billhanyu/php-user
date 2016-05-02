@@ -11,12 +11,13 @@ body, textarea, input {
 .content {
 	padding-left: 10%;
 	float: left;
-	width: 62%;
+	width: 65%;
+	padding-right: 5%;
 }
 .aside {
 	float: right;
 	text-align: left;
-	width: 28%;
+	width: 20%;
 }
 .center {
 	width: 62%;
@@ -30,7 +31,7 @@ h1 {
 }
 h2 {
 	font-size: 150%;
-	padding-left: 5%;
+	clear: both;
 }
 p {
 	line-height: 2em;
@@ -54,4 +55,15 @@ textarea {
 	width: 100px;
 	height: 40px;
 	float: right;
+}
+.articleInfo {
+	float: left;
+	width: 20%;
+}
+.text {
+	float: right;
+	width: 80%;
+}
+.interval {
+	clear: both;
 }

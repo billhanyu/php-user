@@ -33,7 +33,6 @@
    			</div>
 			</div>
 			<div class = "content">
-   			<div>
    				<?php
 						$query = "SELECT * FROM post";
 						$retrieval = mysqli_query($db, $query);
@@ -41,14 +40,32 @@
 							echo "Could not retrieve";
 							die('Could not get data: ' . mysql_error());
 						}
+
+						$num_articles = mysqli_num_rows($retrieval);
+						$count = 0;
 				
-						while ($row = mysqli_fetch_assoc($retrieval)) {
-							echo "<h2><a href = 'article.php?postId=" . $row['id'] . 
- 								"'>" . $row['topic'] . "</a></h2>";
-							echo "<p>" . $row['content'] . "</p>";
+						while ($article = mysqli_fetch_assoc($retrieval)) {
+							$count++;
+							echo "<h2><a href = 'article.php?postId=" . $article['id'] . 
+ 								"'>" . $article['topic'] . "</a></h2>";
+					?>
+					<div class = "articleInfo">
+						<?php
+							echo "<p>" . $article['post_time'] . "</p>";
+							echo "<p>" . $article['author'] . "</p>";
+						?>
+					</div>
+					<div class = "text">
+						<?php
+							echo "<pre>" . $article['content'] . "</pre>";
+						?>
+					</div>
+					<?php
+							if ($count < $num_articles) {
+								echo "<div class = 'interval'><p><br><br></p></div>";
+							}
 						}
 					?>	
-   			</div>
 			</div>
 			<div class = "footer">Bill Yu </div>
    	</body>
