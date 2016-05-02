@@ -4,8 +4,11 @@
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $topic = $_POST['topic'];
         $content = $_POST['content'];
-        $query = "INSERT INTO post (id, topic, content, author, post_time) VALUES (NULL, '$topic', '$content', '$user_id', date('Y-m-d H:i:s'))";
-        mysqli_query($db, $query);
+				$currentDate = date("M j, Y");
+				$author = $_SESSION['login_user'];
+        $query = "INSERT INTO post (id, topic, content, author, post_time) VALUES (NULL, '$topic', '$content', '$author', '$currentDate')";
+        $success = mysqli_query($db, $query);
+				fwrite($handle, $success);
         header("location: welcome.php");
 	}
 ?>

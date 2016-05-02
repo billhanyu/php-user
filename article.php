@@ -38,9 +38,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 				}
 				else {
 					echo "<p><a href = 'logout.php'>Log Out</a></p>";
-					echo "<p><a href = 'edit.php?postId="
-						. $articleId
-						. "'>Edit</a></p>";
+					if ($_SESSION['login_user'] == $article['author']) {
+						echo "<p><a href = 'edit.php?postId="
+							. $articleId
+							. "'>Edit</a></p>";
+					}
 				} 
 			?>
 		</div>
