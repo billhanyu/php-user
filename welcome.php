@@ -8,7 +8,7 @@
 			<meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
 			<meta name="viewport" content="width=device-width initial-scale=1">
-			<link rel = "stylesheet" type = "text/css" href = "styles.css">
+			<link rel = "stylesheet" type = "text/css" href = "css/styles.css">
    	</head>
    
    	<body>
@@ -34,7 +34,7 @@
 			</div>
 			<div class = "content">
    				<?php
-						$query = "SELECT * FROM post";
+						$query = "SELECT * FROM post ORDER BY id DESC";
 						$retrieval = mysqli_query($db, $query);
 						if (! $retrieval) {
 							echo "Could not retrieve";
@@ -67,7 +67,7 @@
 						}
 					?>	
 			</div>
-			<div class = "footer">Bill Yu </div>
+			<div class = "footer">Bill Yu</div>
    	</body>
    
 </html>

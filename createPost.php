@@ -16,7 +16,7 @@
 <html>
 	<head>
 		<title>New Post</title>
-		<link rel	= "stylesheet" type = "text/css" href = "styles.css">
+		<link rel	= "stylesheet" type = "text/css" href = "css/styles.css">
 	</head>
 
 	<body>
