@@ -32,14 +32,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 		<div>
 			<?php
 				if (!isset($_SESSION['login_user'])) {
-					echo "<p><a href = 'login.php?postId="
+					echo "<p><a href = '/login.php?postId="
 						. $articleId
 						. "'>Log In</a></p>";
 				}
 				else {
-					echo "<p><a href = 'logout.php'>Log Out</a></p>";
+					echo "<p><a href = '/logout.php'>Log Out</a></p>";
 					if ($_SESSION['login_user'] == $article['author']) {
-						echo "<p><a href = 'edit.php?postId="
+						echo "<p><a href = '/edit.php?postId="
 							. $articleId
 							. "'>Edit</a></p>";
 					}
@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 	</div>
 	<div class = "content">
 		<?php
-			echo "<h2><a href = 'article.php?postId=" . $article['id'] . 
+			echo "<h2><a href = '/article.php?postId=" . $article['id'] . 
  				"'>" . $article['topic'] . "</a></h2>";
 		?>
 		<div class = "articleInfo">

@@ -8,12 +8,12 @@
 			<meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
 			<meta name="viewport" content="width=device-width initial-scale=1">
-			<link rel = "stylesheet" type = "text/css" href = "css/styles.css">
+			<link rel = "stylesheet" type = "text/css" href = "/css/styles.css">
    	</head>
    
    	<body>
 			<div class = "header">
-				<h1><a href = "welcome.php">Bill Yu</a></h1>
+				<h1><a href = "/welcome.php">Bill Yu</a></h1>
 			</div>
 			<div class = "aside">
    			<div>
@@ -21,12 +21,12 @@
 						if(isset($_SESSION['login_user'])){
 					?>
    				<p>You are logged in as <?php echo $login_session; ?></p>
-					<p><a href = "logout.php">Log Out</a></p>
-					<p><a href = "createPost.php">New Post</a></p>	
+					<p><a href = "/logout.php">Log Out</a></p>
+					<p><a href = "/createPost.php">New Post</a></p>	
 					<?php
 						} else {
 					?>
-					<p><a href = "login.php">Log In</a></p>
+					<p><a href = "/login.php">Log In</a></p>
 					<?php
 						}
 					?>
@@ -46,7 +46,7 @@
 				
 						while ($article = mysqli_fetch_assoc($retrieval)) {
 							$count++;
-							echo "<h2><a href = 'article.php?postId=" . $article['id'] . 
+							echo "<h2><a href = '/article.php?postId=" . $article['id'] . 
  								"'>" . $article['topic'] . "</a></h2>";
 					?>
 					<div class = "articleInfo">

@@ -21,18 +21,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (!$success) {
 		die('Could not update');
 	}
-  header("location: article.php/?postId=$articleId");
+  header("location: /article.php/?postId=$articleId");
 }
 ?>
 
 <html>
 <head>
 	<title><?php echo $article['topic'];?></title>
-	<link rel = "stylesheet" type = "text/css" href = "css/styles.css">
+	<link rel = "stylesheet" type = "text/css" href = "/css/styles.css">
 </head>
 <body>
 	<div class = "header">
-		<h1><a href = "welcome.php">Bill Yu</a></h1>
+		<h1><a href = "/welcome.php">Bill Yu</a></h1>
 	</div>
 	<div class = "center">
 			<form action = "" method = "post">
