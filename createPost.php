@@ -1,15 +1,23 @@
 <?php
 	include("session.php");
+	if (!$_SESSION['login_user']) {
+		header("location: /login.php?newPost=true");
+	}
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $topic = $_POST['topic'];
         $content = $_POST['content'];
 				$currentDate = date("M j, Y");
 				$author = $_SESSION['login_user'];
+
+				if (!$author){
+					header("location: /login.php?newPost=true");
+				}
+
         $query = "INSERT INTO post (id, topic, content, author, post_time) VALUES (NULL, '$topic', '$content', '$author', '$currentDate')";
         $success = mysqli_query($db, $query);
 				fwrite($handle, $success);
-        header("location: welcome.php");
+        header("location: /welcome.php");
 	}
 ?>
 

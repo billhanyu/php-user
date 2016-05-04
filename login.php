@@ -16,6 +16,9 @@
 			if ($fromArticle) {
 				header("location: /article.php?postId=" . $fromArticle);
 			}
+			else if ($_GET['newPost']) {
+				header("location: /createPost.php");
+			}
 			else {
 				header("location: /welcome.php");
 			}
