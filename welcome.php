@@ -27,6 +27,7 @@
 						} else {
 					?>
 					<p><a href = "/login.php">Log In</a></p>
+					<p><a href = "/signup.php">Sign Up</a></p>
 					<?php
 						}
 					?>

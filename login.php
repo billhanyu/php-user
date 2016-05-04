@@ -5,7 +5,7 @@
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$myusername = mysqli_real_escape_string($db, $_POST['username']);
-    	$mypassword = md5(mysqli_real_escape_string($db, $_POST['password']));
+    $mypassword = md5(mysqli_real_escape_string($db, $_POST['password']));
 		$sql = "SELECT id FROM auth WHERE username = '$myusername' and passwordhash = '$mypassword'";	
 		$result = mysqli_query($db, $sql);
 		$count = mysqli_num_rows($result);
@@ -14,10 +14,10 @@
 			$_SESSION['login_user'] = $myusername;
 			$fromArticle = $_GET['postId'];
 			if ($fromArticle) {
-				header("location: article.php?postId=" . $fromArticle);
+				header("location: /article.php?postId=" . $fromArticle);
 			}
 			else {
-				header("location: welcome.php");
+				header("location: /welcome.php");
 			}
 		}
 		else {
@@ -27,32 +27,27 @@
 ?>
 
 <html>
+	<head>
+		<title>Login Page</title>
+			<link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="/css/user.css">
+	</head>
    
-   <head>
-      <title>Login Page</title>
-   </head>
-   
-   <body>
-	
-      <div>
-         <div>
-            <div><b>Login</b></div>
-				
-            <div>
-               
-               <form action = "" method = "post">
-                  <label>Username: </label><input type = "text" name = "username"/><br /><br />
-                  <label>Password: </label><input type = "password" name = "password"/><br/><br />
-                  <input type = "submit" value = " Go "/><br />
-               </form>
-               
-               <div><?php echo $error; ?></div>
-					
-            </div>
-				
-         </div>
-			
-      </div>
-
-   </body>
+	<body>	
+		<br><br><br><br><br>
+		<form action="" method="post">
+      <h1>Log In</h1>
+       
+			<fieldset>
+        <label for="name">User Name:</label>
+        <input type="text" id="username" name="username">
+          
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+      </fieldset>
+        
+			<div class = "error"><?php echo $error;?></div>
+      <button type="submit">Log In</button>
+    </form>
+	</body>
 </html>
