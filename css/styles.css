@@ -115,3 +115,17 @@ textarea {
 .interval {
 	clear: both;
 }
+.pages {
+	clear: both;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 30%;
+	font-size: 200%;
+	font-family: Montserrat, "Helvetica Neue", sans-serif;
+}
+#currentPage {
+	color: #2372B2;
+}
+#currentPage, #otherPage {
+	padding-right: 20px;
+}

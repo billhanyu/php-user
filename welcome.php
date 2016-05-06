@@ -36,7 +36,12 @@
 			</div>
 			<div class = "content">
    				<?php
+						$pageIndex = $_GET['page'];
 						$query = "SELECT * FROM post ORDER BY id DESC";
+						if ($pageIndex) {
+							$pageQuery = $query . " LIMIT " . ($pageIndex-1) * $articles_per_page . ", " . $pageIndex * $articles_per_page;
+						}
+						else $pageIndex = 1;
 						$retrieval = mysqli_query($db, $query);
 						if (! $retrieval) {
 							echo "Could not retrieve";
@@ -44,7 +49,15 @@
 						}
 
 						$num_articles = mysqli_num_rows($retrieval);
+						$pages = ($num_articles - 1) / $articles_per_page + 1;
 						$count = 0;
+
+						if ($pageQuery) {
+							$retrieval = mysqli_query($db, $pageQuery);
+							if (!$retrieval) {
+								die('Could not get data: ' . mysql_error());
+							}
+						}
 				
 						while ($article = mysqli_fetch_assoc($retrieval)) {
 							$count++;
@@ -63,11 +76,23 @@
 						?>
 					</div>
 					<?php
-							if ($count < $num_articles) {
+							if ($count < $articles_per_page) {
 								echo "<div class = 'interval'><p><br><br></p></div>";
 							}
 						}
 					?>	
+			</div>
+			<div class = "pages">
+				<?php
+					for ($i = 1; $i <= $pages; $i++) {
+						if ($i == $pageIndex) {
+							echo "<a id='currentPage' href = '/welcome.php?page=$i'>$i</a>";
+						}
+						else {
+							echo "<a id='otherPage' href = '/welcome.php?page=$i'>$i</a>";
+						}
+					}
+				?>
 			</div>
 			<div class = "footer">Bill Yu</div>
 			</div>
