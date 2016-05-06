@@ -38,10 +38,8 @@
    				<?php
 						$pageIndex = $_GET['page'];
 						$query = "SELECT * FROM post ORDER BY id DESC";
-						if ($pageIndex) {
-							$pageQuery = $query . " LIMIT " . ($pageIndex-1) * $articles_per_page . ", " . $pageIndex * $articles_per_page;
-						}
-						else $pageIndex = 1;
+						if (!$pageIndex) $pageIndex = 1;
+						$pageQuery = $query . " LIMIT " . ($pageIndex-1) * $articles_per_page . ", " . $pageIndex * $articles_per_page;
 						$retrieval = mysqli_query($db, $query);
 						if (! $retrieval) {
 							echo "Could not retrieve";
