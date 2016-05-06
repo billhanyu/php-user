@@ -37,7 +37,8 @@
 	</head>
    
 	<body>	
-		<br><br><br><br><br>
+		<br><br><br>
+		<div class = "window">
 		<form action="" method="post">
       <h1>Log In</h1>
        
@@ -52,5 +53,9 @@
 			<div class = "error"><?php echo $error;?></div>
       <button type="submit">Log In</button>
     </form>
+		<form action="/signup.php" method="get">
+			<button type = "submit" id="signup">Sign Up</button>
+		</form>
+		</div>
 	</body>
 </html>

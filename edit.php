@@ -1,5 +1,6 @@
 <?php
 include('session.php');
+include('functions.php');
 $articleId = $_GET['postId'];
 $query = "SELECT * FROM post WHERE id = " . $articleId;
 $retrieval = mysqli_query($db, $query);
@@ -11,6 +12,7 @@ $article = mysqli_fetch_assoc($retrieval);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {	
 	$topic = $_POST['topic'];
   $content = $_POST['content'];
+	$content = filter($content);
 	$currentDate = date("M j, Y");
 	$author = $_SESSION['login_user'];
 	if ($author != $article['author']) {
@@ -31,6 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	<link rel = "stylesheet" type = "text/css" href = "/css/styles.css">
 </head>
 <body>
+	<div class = "wrapper">
 	<div class = "header">
 		<h1><a href = "/welcome.php">Bill Yu</a></h1>
 	</div>
@@ -46,5 +49,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		<div class = "footer">
 			Bill Yu
 		</div>
+	</div>
 </body>
 </html>

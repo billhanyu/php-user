@@ -1,5 +1,6 @@
 <?php
 	include("session.php");
+	include("functions.php");
 	if (!$_SESSION['login_user']) {
 		header("location: /login.php?newPost=true");
 	}
@@ -7,6 +8,7 @@
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $topic = $_POST['topic'];
         $content = $_POST['content'];
+				$content = filter($content);
 				$currentDate = date("M j, Y");
 				$author = $_SESSION['login_user'];
 
@@ -28,6 +30,7 @@
 	</head>
 
 	<body>
+		<div class = "wrapper">
 		<div class = "header">
 			<h1><a href = 'welcome.php'>Bill Yu</a></h1>
 		</div>
@@ -42,6 +45,7 @@
 		</div>
 		<div class = "footer">
 			Bill Yu
+		</div>
 		</div>
 	</body>
 </html>

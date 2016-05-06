@@ -6,11 +6,11 @@
 
 body {
   font-family: 'Nunito', sans-serif;
-  color: #384047;
+	background-color: #2E3948;
 }
 
-form {
-  max-width: 300px;
+.window {
+  max-width: 35%;
   margin: 10px auto;
   padding: 10px 20px;
   background: #f4f7f8;
@@ -85,7 +85,13 @@ button {
   border: 1px solid #3ac162;
   border-width: 1px 1px 3px;
   box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+#signup {
+	background-color: #5082B9;
+	border: 1px solid #4875a6;
+	margin-bottom: 5px;
 }
 
 fieldset {

@@ -12,6 +12,7 @@
    	</head>
    
    	<body>
+			<div class = "wrapper">
 			<div class = "header">
 				<h1><a href = "/welcome.php">Bill Yu</a></h1>
 			</div>
@@ -69,6 +70,7 @@
 					?>	
 			</div>
 			<div class = "footer">Bill Yu</div>
+			</div>
    	</body>
    
 </html>

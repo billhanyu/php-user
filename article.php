@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 <body>
 <div>
+	<div class = "wrapper">
 	<div class = "header">
 		<h1><a href = '/welcome.php'>Bill Yu</a></h1>
 	</div>
@@ -66,6 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 	</div>
 <div class = "footer">
 	Bill Yu	
+</div>
 </div>
 </body>
 </html>	

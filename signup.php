@@ -30,7 +30,8 @@
 	</head>
  
 	<body>
-		<br><br><br><br><br>
+		<br><br><br>
+		<div class = "window">
 		<form action="" method="post">
 			<h1>Sign Up</h1>
         
@@ -46,5 +47,6 @@
         
       <button type="submit">Sign Up</button>
     </form>
+		</div>
 	</body>
 </html>
