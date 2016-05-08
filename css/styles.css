@@ -53,6 +53,10 @@ h2 {
 p {
 	line-height: 2em;
 }
+img {
+	max-width: 100%;
+	height: auto;
+}
 .footer {
 	padding-top: 20px;
 	text-align: center;
@@ -136,4 +140,7 @@ textarea {
 }
 #currentPage, #otherPage {
 	padding-right: 20px;
+}
+.comment {
+	clear: both;
 }

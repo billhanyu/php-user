@@ -1,3 +1,5 @@
 <?php
-	echo date("M j, Y");
+	include("config.php");
+	include("comment.php");
+	echo getComments(38);
 ?>

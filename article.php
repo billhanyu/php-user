@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 include('session.php');
+include('comment.php');
 ?>
 <html>
 <meta charset="utf-8">
@@ -10,6 +11,7 @@ include('session.php');
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "GET") {	
 	$articleId = $_GET['postId'];
+	$_SESSION['articleId'] = $articleId;
 	$query = "SELECT * FROM post WHERE id = " . $articleId;
 	$retrieval = mysqli_query($db, $query);
 	if (! $retrieval) {
@@ -64,6 +66,36 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 				echo "<pre>" . $article['content'] . "</pre>";
 			?>
 		</div>
+	</div>
+	<div class = "content">
+		<?php 
+			$commentArray = getComments($articleId);
+			if (count($commentArray) > 0) {
+				echo "<h3>Comments</h3>";
+			}
+			for ($i = 0; $i < count($commentArray); $i++) {
+		?>
+				<div style = "clear: both;">
+				<div class = "articleInfo">
+					<?php
+						echo "<p>" . $commentArray[$i]->post_time . "</p>";
+						echo "<p>" . $commentArray[$i]->author . "</p>";
+					?>
+				</div>
+				<div class = "text">
+					<?php
+						echo "<pre>" . $commentArray[$i]->content . "</pre>";
+					?>
+				</div>
+				</div>
+		<?php		
+			}
+		?>
+		<h3 style = "clear: both;">New Comment</h3>
+		<form action = "/comment.php" method = "post">
+			<textarea name = "content" class = "editComment" rows="10"></textarea>
+			<input id = "postComment" type = "submit" value = "Comment">
+		</form>
 	</div>
 <div class = "footer">
 	Bill Yu	
