@@ -39,7 +39,7 @@
 						$pageIndex = $_GET['page'];
 						$query = "SELECT * FROM post ORDER BY id DESC";
 						if (!$pageIndex) $pageIndex = 1;
-						$pageQuery = $query . " LIMIT " . ($pageIndex-1) * $articles_per_page . ", " . $pageIndex * $articles_per_page;
+						$pageQuery = $query . " LIMIT " . ($pageIndex-1) * $articles_per_page . ", " . $articles_per_page;
 						$retrieval = mysqli_query($db, $query);
 						if (! $retrieval) {
 							echo "Could not retrieve";
@@ -74,7 +74,7 @@
 						?>
 					</div>
 					<?php
-							if ($count < $articles_per_page) {
+							if ($count < $articles_per_page && ($count + ($pageIndex - 1) * $articles_per_page) < $num_articles) {
 								echo "<div class = 'interval'><p><br><br></p></div>";
 							}
 						}
