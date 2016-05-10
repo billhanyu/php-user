@@ -12,6 +12,16 @@ include('comment.php');
 if ($_SERVER["REQUEST_METHOD"] == "GET") {	
 	$articleId = $_GET['postId'];
 	$_SESSION['articleId'] = $articleId;
+	$commentContent = $_SESSION['commentContent'][$articleId];
+	
+	if ($_GET['error'] == 901) {
+	?>
+		<script>
+			alert("Comment must be more than 10 characters long");
+		</script>
+	<?php
+	}
+
 	$query = "SELECT * FROM post WHERE id = " . $articleId;
 	$retrieval = mysqli_query($db, $query);
 	if (! $retrieval) {
@@ -93,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 		?>
 		<h3 style = "clear: both;">New Comment</h3>
 		<form action = "/comment.php" method = "post">
-			<textarea name = "content" class = "editComment" rows="10"></textarea>
+			<textarea name = "content" class = "editComment" rows="10"><?php echo $commentContent?></textarea>
 			<input id = "postComment" type = "submit" value = "Comment">
 		</form>
 	</div>

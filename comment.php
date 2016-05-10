@@ -4,12 +4,18 @@
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$articleId = $_SESSION['articleId'];
 		$content = $_POST['content'];
+		$_SESSION['commentContent'][$articleId] = $content;
 		$content = filter($content);
 		$currentDate = date("M j, Y");
 		$author = $_SESSION['login_user'];
+		
+		if (strlen($content) < 10) {
+			header("location: /article.php?postId=$articleId&error=901");
+			die("not long enough");
+		}
 
 		if (!$author){
-			header("location: /login.php");
+			header("location: /login.php?postId=$articleId");
 			die("not logged in");
 		}
 
@@ -18,6 +24,7 @@
 		if (!$success) {
 			die("cannot post comment");
 		}
+		$_SESSION['commentContent'][$articleId] = "";
 		header("location: /article.php?postId=$articleId");
 	}
 
