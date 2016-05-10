@@ -39,6 +39,40 @@ body, textarea {
 	width: 62%;
 	margin: 0 auto;
 }
+.articleInfo {
+	float: left;
+	width: 20%;
+}
+.text {
+	float: right;
+	width: 80%;
+}
+@media screen and (max-width: 480px) {
+	.center {
+		padding-left: 20px;
+		padding-right: 20px;
+		width: auto;
+	}
+	.aside {
+		padding-left: 20px;
+		float: none;
+		width: 100%;
+	}
+	.content {
+		padding-left: 20px;
+		padding-right: 20px;
+		float: none;
+		width: auto;
+	}
+	.text {
+		float: none;
+		width: 100%;
+	}
+	.articleInfo {
+		float: none;
+		width: 100%;
+	}
+}
 h1 {
 	height: 120px;
 	line-height: 120px;
@@ -115,14 +149,6 @@ textarea {
 #postButton:active {
 	position:relative;
 	top:1px;
-}
-.articleInfo {
-	float: left;
-	width: 20%;
-}
-.text {
-	float: right;
-	width: 80%;
 }
 .interval {
 	clear: both;

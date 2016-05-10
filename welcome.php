@@ -62,15 +62,15 @@
 							echo "<h2><a href = '/article.php?postId=" . $article['id'] . 
  								"'>" . $article['topic'] . "</a></h2>";
 					?>
+					<div class = "text">
+						<?php
+							echo "<pre>" . $article['content'] . "</pre>";
+						?>
+					</div>
 					<div class = "articleInfo">
 						<?php
 							echo "<p>" . $article['post_time'] . "</p>";
 							echo "<p>" . $article['author'] . "</p>";
-						?>
-					</div>
-					<div class = "text">
-						<?php
-							echo "<pre>" . $article['content'] . "</pre>";
 						?>
 					</div>
 					<?php
