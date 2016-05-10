@@ -38,6 +38,8 @@
 				if ($canPost) {
         	$query = "INSERT INTO post (id, topic, content, author, post_time) VALUES (NULL, '$topic', '$content', '$author', '$currentDate')";
         	$success = mysqli_query($db, $query);
+					$_SESSION['newPostTopic'] = "";
+					$_SESSION['newPostContent'] = "";
         	header("location: /welcome.php");
 				}
 	}

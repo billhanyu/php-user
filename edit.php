@@ -47,6 +47,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if (!$success) {
 			die('Could not update');
 		}
+		$_SESSION['editTopic'][$articleId] = "";
+		$_SESSION['editContent'][$articleId] = "";
   	header("location: /article.php/?postId=$articleId");
 	}
 }
