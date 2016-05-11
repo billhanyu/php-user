@@ -36,7 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 </head>
 
 <body>
-<div>
 	<div class = "wrapper">
 	<div class = "header">
 		<h1><a href = '/welcome.php'>Bill Yu</a></h1>
@@ -72,12 +71,13 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 		</div>
 		<div class = "articleInfo">
 			<?php
-				echo "<p>" . $article['post_time'] . "</p>";
 				echo "<p>" . $article['author'] . "</p>";
+				echo "<p>" . $article['post_time'] . "</p>";
 			?>
 		</div>
 	</div>
-	<div class = "content">
+	<div class = "interval"></div>
+	<div class = "comments">
 		<?php 
 			$commentArray = getComments($articleId);
 			if (count($commentArray) > 0) {
@@ -93,14 +93,19 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 					</div>
 					<div class = "articleInfo">
 						<?php
-							echo "<p>" . $commentArray[$i]->post_time . "</p>";
 							echo "<p>" . $commentArray[$i]->author . "</p>";
+							echo "<p>" . $commentArray[$i]->post_time . "</p>";
 						?>
 					</div>
 				</div>
 		<?php		
 			}
+			if (count($commentArray) > 0) {
+				echo "<div class = 'interval'></div>";
+			}
 		?>
+	</div>
+	<div class = "newComment">
 		<h3 style = "clear: both;">New Comment</h3>
 		<form action = "/comment.php" method = "post">
 			<textarea name = "content" class = "editComment" rows="10"><?php echo $commentContent?></textarea>
@@ -110,6 +115,18 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 <div class = "footer">
 	Bill Yu	
 </div>
-</div>
 </body>
 </html>	
+
+<?php
+	if ($_GET['viewComments']) {
+?>
+		<script>document.getElementByClassName('comments').scrollIntoView();</script>
+<?php
+	}
+	else if ($_GET['newComment']) {
+?>
+		<script>document.getElementByClassName('newComment').scrollIntoView();</script>
+<?php
+	}
+?>

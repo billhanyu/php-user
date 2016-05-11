@@ -1,5 +1,6 @@
 <?php
-    include('session.php');
+	include('session.php');
+	include('comment.php');
 ?>
 <html>
    
@@ -69,13 +70,21 @@
 					</div>
 					<div class = "articleInfo">
 						<?php
-							echo "<p>" . $article['post_time'] . "</p>";
 							echo "<p>" . $article['author'] . "</p>";
+							echo "<p>" . $article['post_time'] . "</p>";
+							$articleId = $article['id'];
+							$num_comments = count(getComments($articleId));
+							if ($num_comments == 0) {
+								echo "<a href = '/article.php?postId=$articleId&newComment=true'>Leave a comment</a>";
+							}
+							else {
+								echo "<a href = '/article.php?postId=$articleId&viewComments=true'>Comments($num_comments)</a>";
+							}
 						?>
 					</div>
 					<?php
 							if ($count < $articles_per_page && ($count + ($pageIndex - 1) * $articles_per_page) < $num_articles) {
-								echo "<div class = 'interval'><p><br><br></p></div>";
+								echo "<div class = 'interval'></div>";
 							}
 						}
 					?>	
