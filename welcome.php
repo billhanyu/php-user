@@ -75,10 +75,10 @@
 							$articleId = $article['id'];
 							$num_comments = count(getComments($articleId));
 							if ($num_comments == 0) {
-								echo "<a href = '/article.php?postId=$articleId&newComment=true'>Leave a comment</a>";
+								echo "<a href = '/article.php?postId=$articleId#newComment'>Leave a comment</a>";
 							}
 							else {
-								echo "<a href = '/article.php?postId=$articleId&viewComments=true'>Comments($num_comments)</a>";
+								echo "<a href = '/article.php?postId=$articleId#comments'>Comments($num_comments)</a>";
 							}
 						?>
 					</div>

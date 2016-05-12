@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 		</div>
 	</div>
 	<div class = "interval"></div>
-	<div class = "comments">
+	<div id = "comments">
 		<?php 
 			$commentArray = getComments($articleId);
 			if (count($commentArray) > 0) {
@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 			}
 		?>
 	</div>
-	<div class = "newComment">
+	<div id = "newComment">
 		<h3 style = "clear: both;">New Comment</h3>
 		<form action = "/comment.php" method = "post">
 			<textarea name = "content" class = "editComment" rows="10"><?php echo $commentContent?></textarea>
@@ -117,16 +117,3 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 </div>
 </body>
 </html>	
-
-<?php
-	if ($_GET['viewComments']) {
-?>
-		<script>document.getElementByClassName('comments').scrollIntoView();</script>
-<?php
-	}
-	else if ($_GET['newComment']) {
-?>
-		<script>document.getElementByClassName('newComment').scrollIntoView();</script>
-<?php
-	}
-?>

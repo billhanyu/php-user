@@ -24,7 +24,7 @@ body, textarea {
 }
 .header {
 }
-.content, .comments, .newComment {
+.content, #comments, #newComment {
 	padding-left: 15%;
 	float: left;
 	width: 60%;
