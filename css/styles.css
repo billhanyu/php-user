@@ -49,7 +49,29 @@ body, textarea {
 }
 .interval {
 	clear: both;
-	height: 30px;
+	height: 40px;
+}
+#info, #commentInfo {
+	width: 100%;
+	margin: 1em 0px 0;
+	float: left;
+	color: #686868;
+}
+#commentInfo {
+	margin: 0 0 1em;
+}
+#info > a {
+	color: #686868;
+}
+#info > a:hover {
+	color: #2372B2;
+}
+#piece {
+	clear: both;
+	padding: 1em 0 0;
+}
+#commentContent {
+	margin: 0;
 }
 @media screen and (max-width: 480px) {
 	.wrapper {
@@ -65,10 +87,11 @@ body, textarea {
 	}
 	.aside {
 		padding-left: 20px;
+		padding-right: 20px;
 		float: none;
-		width: 100%;
+		width: auto;
 	}
-	.content {
+	.content, #newComment, #comments {
 		padding-left: 20px;
 		padding-right: 20px;
 		float: none;
@@ -83,7 +106,16 @@ body, textarea {
 		width: 100%;
 	}
 	.interval {
-		height: 15px;
+		height: 25px;
+	}
+	#info {
+		width: auto;
+		margin: 0;
+	}
+	#info::before {
+		content: "/";
+		margin: 0 10px 0;
+		color: #686868;
 	}
 }
 h1 {

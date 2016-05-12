@@ -70,15 +70,15 @@
 					</div>
 					<div class = "articleInfo">
 						<?php
-							echo "<p>" . $article['author'] . "</p>";
-							echo "<p>" . $article['post_time'] . "</p>";
+							echo "<div id='info'>" . $article['author'] . "</div>";
+							echo "<div id='info'>" . $article['post_time'] . "</div>";
 							$articleId = $article['id'];
 							$num_comments = count(getComments($articleId));
 							if ($num_comments == 0) {
-								echo "<a href = '/article.php?postId=$articleId#newComment'>Leave a comment</a>";
+								echo "<div id='info'><a href = '/article.php?postId=$articleId#newComment'>Leave a comment</a></div>";
 							}
 							else {
-								echo "<a href = '/article.php?postId=$articleId#comments'>Comments($num_comments)</a>";
+								echo "<div id='info'><a href = '/article.php?postId=$articleId#comments'>Comments($num_comments)</a></div>";
 							}
 						?>
 					</div>

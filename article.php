@@ -71,8 +71,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 		</div>
 		<div class = "articleInfo">
 			<?php
-				echo "<p>" . $article['author'] . "</p>";
-				echo "<p>" . $article['post_time'] . "</p>";
+				echo "<div id='info'>" . $article['author'] . "</div>";
+				echo "<div id='info'>" . $article['post_time'] . "</div>";
 			?>
 		</div>
 	</div>
@@ -85,16 +85,16 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 			}
 			for ($i = 0; $i < count($commentArray); $i++) {
 		?>
-				<div style = "clear: both;">
+				<div id = "piece">
 					<div class = "text">
 						<?php
-							echo "<pre>" . $commentArray[$i]->content . "</pre>";
+							echo "<pre id='commentContent'>" . $commentArray[$i]->content . "</pre>";
 						?>
 					</div>
 					<div class = "articleInfo">
 						<?php
-							echo "<p>" . $commentArray[$i]->author . "</p>";
-							echo "<p>" . $commentArray[$i]->post_time . "</p>";
+							echo "<div id='commentInfo'>" . $commentArray[$i]->author . "</div>";
+							echo "<div id='commentInfo'>" . $commentArray[$i]->post_time . "</div>";
 						?>
 					</div>
 				</div>
