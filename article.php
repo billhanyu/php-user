@@ -33,6 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 <head>
 <title><?php echo $article['topic']?></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 </head>
 
 <body>
@@ -51,9 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 				else {
 					echo "<p><a href = '/logout.php'>Log Out</a></p>";
 					if ($_SESSION['login_user'] == $article['author']) {
-						echo "<p><a href = '/edit.php?postId="
-							. $articleId
-							. "'>Edit</a></p>";
+						echo "<p><a href = '/edit.php?postId=$articleId'>Edit</a></p>";
+						echo "<p><a href = 'javascript:confirmDelete();'>Delete</a></p>";
 					}
 				} 
 			?>
@@ -117,3 +117,30 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 </div>
 </body>
 </html>	
+
+<script type="text/javascript">
+	function confirmDelete() {
+		if (confirm('Are you sure you want to delete this?')) {
+			$.ajax({
+				url: "/delete.php",
+				type: "GET",
+				data: {postId : <?php echo $articleId;?>},
+				dataType: "html", 
+				success: function(response) {
+					if (response == 1) {
+						window.location.href = "/welcome.php";
+					}
+					else if (response == 2) {
+						alert("No Post Found.");
+					}
+					else if (response == 3) {
+						alert("Not Authorized.");
+					}
+					else {
+						alert("Unknown Error.");
+					}
+				}
+			});
+		}
+	}
+</script>
