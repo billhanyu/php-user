@@ -8,6 +8,10 @@ if (! $retrieval) {
 	die('Could not get data: ' . mysql_error());
 }
 $article = mysqli_fetch_assoc($retrieval);
+$author = $_SESSION['login_user'];
+if ($author != $article['author']) {
+	die('Not authorized to edit');	
+}
 $_SESSION['editTopic'][$articleId] = $article['topic'];
 $_SESSION['editContent'][$articleId] = $article['content'];
 
@@ -19,8 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	$content = filter($content);
 	$currentDate = date("M j, Y");
-	$author = $_SESSION['login_user'];
-
+	
 	$canPost = true;
 
 	if (strlen($topic) < 1) {
@@ -35,10 +38,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	?>
 		<script>alert("Content must be more than 20 characters.");</script>
 	<?php
-	}
-
-	if ($author != $article['author']) {
-		die('Not authorized to edit');	
 	}
 
 	if ($canPost) {

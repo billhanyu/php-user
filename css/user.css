@@ -10,18 +10,24 @@ body {
 }
 
 .window {
-  width: 25%;
+  width: 30%;
   margin: 10px auto;
   padding: 10px 20px;
   background: #f4f7f8;
   border-radius: 8px;
 }
 
+@media screen and (max-width: 768px) {
+	.window {
+		width: 70%;
+	}
+}
+
 @media screen and (max-width: 480px) {
 	.window {
 		width: auto;
-		padding-left: 20px;
-		padding-right: 20px;
+		margin-left: 20px;
+		margin-right: 20px;
 	}
 }
 
