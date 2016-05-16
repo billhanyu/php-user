@@ -10,7 +10,7 @@
 		$author = $_SESSION['login_user'];
 		
 		if (strlen($content) < 10) {
-			header("location: /article.php?postId=$articleId&error=901");
+			header("location: /article.php?postId=$articleId&error=901#newComment");
 			die("not long enough");
 		}
 
