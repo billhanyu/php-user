@@ -48,15 +48,54 @@
 <html>
 	<head>
 		<title>New Post</title>
+		<link rel = "stylesheet" type = "text/css" href = "/css/bootstrap.min.css">
 		<link rel	= "stylesheet" type = "text/css" href = "css/styles.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script src = "/js/bootstrap.min.js"></script>
+
 	</head>
 
 	<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/welcome.php">Bill Yu</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<?php
+				if(isset($_SESSION['login_user'])){
+			?>
+   				<p class = "navbar-text">You are logged in as <?php echo $login_session; ?></p>
+					<ul class = "nav navbar-nav navbar-right">
+						<li><a href = "/logout.php">Log Out</a></li>
+						<li><a href = "/createPost.php">New Post</a></li>
+					</ul>
+			<?php
+				} else {
+			?>
+					<ul class = "nav navbar-nav navbar-right">
+						<li><a href = "/login.php">Log In</a></li>
+						<li><a href = "/signup.php">Sign Up</a></li>
+					</ul>
+			<?php
+				}
+			?>
+   </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
 		<div class = "wrapper">
-		<div class = "header">
-			<h1><a href = 'welcome.php'>Bill Yu</a></h1>
-		</div>
-		<div class = "center">
+		<div class = "content">
 			<form action = "" method = "post">
       	<h2>Topic: </h2><br>
       	<input type = "text" name = "topic" class = "topicBox" value = "<?php echo $_SESSION['newPostTopic'];?>"/><br /><br />

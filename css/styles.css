@@ -7,17 +7,17 @@ a:hover {
 }
 body {
 	font-family: 'Nunito', sans-serif;
-	background-color: #2E3948;
 	margin: 0;
 	padding: 0;
 	line-height: 1.75;
 }
-.wrapper {
-	background-color: white;
-	margin-top: 30px;
-	margin-bottom: 30px;
+.navbar-text {
+	line-height: 1;
 	margin-left: 20px;
-	margin-right: 20px;
+}
+.wrapper {
+	margin-top: 80px;
+	background-color: white;
 }
 body, textarea {
 	font-size: 16px;
@@ -25,10 +25,8 @@ body, textarea {
 .header {
 }
 .content, #comments, #newComment {
-	padding-left: 15%;
-	float: left;
-	width: 80%;
-	padding-right: 5%;
+	width: 60%;
+	margin: 0 auto;
 }
 .aside {
 	float: right;
@@ -77,7 +75,7 @@ body, textarea {
 	.wrapper {
 		margin-left: 0;
 		margin-right: 0;
-		margin-top: 20px;
+		margin-top: 50px;
 		margin-bottom: 20px;
 	}
 	.center {
@@ -117,6 +115,9 @@ body, textarea {
 		margin: 0 10px 0;
 		color: #686868;
 	}
+	.navbar-brand {
+		margin-left: 20px;
+	}
 }
 h1 {
 	height: 120px;
@@ -129,7 +130,7 @@ h2 {
 	font-size: 150%;
 	clear: both;
 }
-p {
+p :not(.navbar-text){
 	line-height: 2em;
 }
 img {
@@ -151,7 +152,6 @@ textarea {
 .topicBox {
 	font-size:24px;
 	width:100%;
-	height: 1.5em;
 	border:1px solid #888888; 
 	border-radius: 2px;
 }
@@ -234,3 +234,31 @@ pre {
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px
 }
+.navbar-brand {
+	font-size: 200%;
+	font-family: cursive;
+	color: #000;
+	padding: 15px 0;
+}
+.navbar-default .navbar-brand {
+	color: #000;
+}
+@media (min-width: 480px) {
+	.container>.navbar-collapse, .container-fluid>.navbar-collapse {
+		margin-right: 20%;
+	}
+	.container>.navbar-header, .container-fluid>.navbar-header {
+		margin-left: 20%;
+	}
+	.navbar-toggle {
+		margin-right: 25%;
+	}
+}
+@media (min-width: 480px) and (max-width: 768px) {	
+	.navbar-collapse > p {
+		margin-left: 20%;
+	}
+	.navbar-right > li {
+		margin-left: 20%;
+	}
+}	
