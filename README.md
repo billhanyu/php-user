@@ -58,7 +58,9 @@ A blog post system using PHP and MYSQL
 ## Next Steps
 
 - [x] Delete posts for owners
-- [ ] Make log in/out and paging prettier
+- [x] Make log in/out prettier
+- [ ] Make pagination prettier
 - [ ] Add some JS animations
 - [ ] Move log in/out to main page
 - [ ] Different authorization levels for users
+- [ ] APIs for articles, comments and users
