@@ -17,6 +17,15 @@ A blog post system using PHP and MYSQL
 * Topics/contents have to be long enough
 * Only owners can edit
 
+## APIs
+
+Working on url rewrite with `mod_rewrite` module but failing.
+
+* `/api.php?request=post&number=all`<br>
+  Retrieve all article objects in json array
+* `/api.php?request=post&number={articleId}`<br>
+  Retrieve article object with id 'articleId'
+
 ## Database Structures
 
 1. Auth:
