@@ -9,6 +9,7 @@ A blog post system using PHP and MYSQL
 * Paging
 * Comments
 * Editing for owners
+* API for articles
 
 ## Rules
 
