@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule "^api$" welcome.php
+RewriteRule ^api/post/withId/([0-9]+)$ api.php?request=post&number=$1 
