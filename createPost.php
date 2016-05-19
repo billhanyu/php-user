@@ -52,7 +52,13 @@
 		<link rel	= "stylesheet" type = "text/css" href = "css/styles.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 		<script src = "/js/bootstrap.min.js"></script>
-
+		<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+  	<script>
+			tinymce.init({
+				selector: '.contentBox',
+				content_css: '/css/tinyMCE.css'
+			});
+		</script>
 	</head>
 
 	<body>
