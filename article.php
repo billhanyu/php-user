@@ -98,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 		?>
 		<div class = "text">
 			<?php
-				echo "<pre>" . $article['content'] . "</pre>";
+				echo "<div>" . $article['content'] . "</div>";
 			?>
 		</div>
 		<div class = "articleInfo">
@@ -120,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 				<div id = "piece">
 					<div class = "text">
 						<?php
-							echo "<pre id='commentContent'>" . $commentArray[$i]->content . "</pre>";
+							echo "<div id='commentContent'>" . $commentArray[$i]->content . "</div>";
 						?>
 					</div>
 					<div class = "articleInfo">

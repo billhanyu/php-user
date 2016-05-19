@@ -24,13 +24,16 @@
 ?>
 <html>
 	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width initial-scale=1">
 		<title>Signup Page</title>
 		<link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="/css/user.css">
 	</head>
  
 	<body>
-		<br><br><br>
+		<div class = "interval"></div>
 		<div class = "window">
 		<form action="" method="post">
 			<h1>Sign Up</h1>

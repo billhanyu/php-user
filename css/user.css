@@ -17,9 +17,16 @@ body {
   border-radius: 8px;
 }
 
+.interval {
+	height: 50px;
+}
+
 @media screen and (max-width: 768px) {
 	.window {
 		width: 70%;
+	}
+	.interval {
+		height: 80px;
 	}
 }
 
@@ -28,6 +35,9 @@ body {
 		width: auto;
 		margin-left: 20px;
 		margin-right: 20px;
+	}
+	.interval {
+		height: 20px;
 	}
 }
 
